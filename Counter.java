@@ -13,8 +13,19 @@ public class Counter {
 	   You may pass whatever parameters are helpful to the 'printAll' function.
 	   Non-recursive solutions will receive a zero when the grader sees them. 
 	*/
+
+	public static void printAll(int nbits, String prefix) {
+		if(nbits == 0) {
+			System.out.println(prefix);
+		} else {
+			printAll(nbits-1, prefix + "0");
+			printAll(nbits-1, prefix + "1");
+		}
+
+	}
 	
 	public static void main(String[] args){
 		//TODO: Call `printAll`
+		printAll(8, "");
 	}
 }
